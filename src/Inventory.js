@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
 import image from './imgs/warehouses.png'
 import axios from 'axios'
 
 export default function Inventory() {
 
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState()
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
 
 
     const getInventory = () => {
 
-        Axios.get(`${process.env.REACT_APP_API_HOST}/api/product`).then((res) => {
+        axios.get(`${process.env.REACT_APP_API_HOST}/api/product`).then((res) => {
             setItems(res.data)
         })
     }
