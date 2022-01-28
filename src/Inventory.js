@@ -13,6 +13,8 @@ export default function Inventory() {
 
         axios.get(`${process.env.REACT_APP_API_HOST}/api/product`).then((res) => {
             setItems(res.data)
+            console.log(res)
+            console.log(res.data)
         })
     }
 
@@ -56,6 +58,8 @@ export default function Inventory() {
                 </tr>
             </thead>
             <tbody>
+            {items ? items.map((item) => 
+                    console.log(item)) : null}
                 {items ? items.map((item) => 
                     <tr className='bg-white' key={item.productId}>
                         <td className='p-3 text-sm text-blue-500 text-left font-bold'>{item.productId}</td>
