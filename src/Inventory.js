@@ -9,8 +9,10 @@ export default function Inventory() {
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
 
+
     const getInventory = () => {
-        Axios.get("http://10.64.140.43:8090/api/product").then((res) => {
+
+        Axios.get(`${process.env.REACT_APP_API_HOST}/api/product`).then((res) => {
             setItems(res.data)
         })
     }
@@ -18,7 +20,7 @@ export default function Inventory() {
     const addItem = () => {
         const post = {"productName": name, "productPrice": price}
         
-        axios.post("http://10.64.140.43:8090/api/product", post).then((res) => {
+        axios.post(`${process.env.REACT_APP_API_HOST}/api/product`, post).then((res) => {
             getInventory()
         }).catch((error) => {
             console.log(error)
@@ -29,7 +31,7 @@ export default function Inventory() {
     }
 
     const deleteItem = (id) => {
-        axios.delete(`http://10.64.140.43:8090/api/product/${id}`).then((res) => {
+        axios.delete(`${process.env.REACT_APP_API_HOST}/api/product/${id}`).then((res) => {
             getInventory()
         }).catch((error) => {
             console.log(error)
