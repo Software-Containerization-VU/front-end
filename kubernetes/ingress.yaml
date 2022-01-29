@@ -3,8 +3,13 @@ kind: Ingress
 metadata:
   name: inventory-ingress
 spec:
+  tls:
+    - hosts:
+      - www.lkrum.com
+      - api.lkrum.com
+      secretName: cloudflare-tls
   rules:
-    - host: product-inv.com
+    - host: www.lkrum.com
       http:
         paths:
           - path: /
@@ -14,7 +19,10 @@ spec:
                 name: inventory-ui-clusterip
                 port:
                   number: 3000
-          - path: /api
+    - host: api.lkrum.com
+      http:
+        paths:
+          - path: /
             pathType: Prefix
             backend:
               service:
