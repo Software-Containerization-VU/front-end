@@ -14,7 +14,7 @@ spec:
         app: inventory-ui
     spec:
       containers:
-      - name: inventory-ui-container
-        image: localhost:32000/inventory-ui:v85
-        ports:
-        - containerPort: 80
+        - name: inventory-ui-container
+          image: docker.io/macsi21/inventory-ui:v1
+          ports:
+            - containerPort: 80
