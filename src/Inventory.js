@@ -12,6 +12,8 @@ export default function Inventory() {
     const getInventory = () => {
         axios.get(`${process.env.REACT_APP_API_HOST}/api/product`).then((res) => {
             setItems(res.data)
+            console.log(process.env.REACT_APP_API_HOST)
+            console.log(items)
         })
     }
 
