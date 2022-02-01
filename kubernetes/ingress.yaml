@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: inventory-ingress
   annotations:     
-    kubernetes.io/ingress.global-static-ip-name:  "ingress-inventory"
+    kubernetes.io/ingress.global-static-ip-name: "ingress-inventory"
 spec:
   tls:
     - hosts:
