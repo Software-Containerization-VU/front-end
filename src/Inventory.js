@@ -44,7 +44,7 @@ export default function Inventory() {
 
     return <>
     <img src={image} alt='-' className='w-20 h-20 mx-auto'></img>
-    <h1 className='text-4xl mb-8'>Inventory Management</h1>
+    <h1 className='text-4xl mb-8'>Inventory Management "Group 6"</h1>
     <div className='bg-white w-1/2 mx-auto'>
         
         <table className='w-full drop-shadow-md'>
